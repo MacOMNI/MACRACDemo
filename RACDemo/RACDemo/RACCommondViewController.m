@@ -8,7 +8,7 @@
 
 #import "RACCommondViewController.h"
 #import <ReactiveCocoa.h>
-
+#import "RACmetamacros.h"
 @interface RACCommondViewController ()
 
 
@@ -51,12 +51,14 @@
 //    _racCommand = [RACCommand alloc]initWithEnabled:<#(RACSignal *)#> signalBlock:<#^RACSignal *(id input)signalBlock#>
 }
 -(RACSignal *)isEmailSignal{
+    
+    
+   // @weakify(self);
     if (!_isEmailSignal) {
-        _isEmailSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-           return [RACDisposable disposableWithBlock:^{
-               
-           }];
-        }];
+        _isEmailSignal = _textField.rac_textSignal;
+//        [_isEmailSignal map:^id(NSString *value) {
+//        
+//        }];
     }
     return _isEmailSignal;
 }
