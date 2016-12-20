@@ -13,9 +13,13 @@
 
 
     @property (weak, nonatomic) IBOutlet UIButton *commandButton;
+    @property (weak, nonatomic) IBOutlet UITextView *textView;
     @property (weak, nonatomic) IBOutlet UITextField *textField;
     @property (nonatomic,strong) RACCommand *racCommand;
     @property (nonatomic,strong) RACSignal *isEmailSignal;
+    @property (nonatomic,strong) RACSignal *textFieldSignal;
+    @property(nonatomic,copy) NSString *emailString;
+
 @end
 
 @implementation RACCommondViewController
@@ -44,23 +48,60 @@
     // 五、监听当前命令是否正在执行executing
     
     // 六、使用场景,监听按钮点击，网络请求
-
+//    _textFieldSignal = [RACObserve(_textField,text)  map:^id(id value) {
+//        return @([self isValidateEmail:value]);
+//    }];
+    //本类内监听 textField 文本变化 映射
     
 }
 -(void)initData{
-//    _racCommand = [RACCommand alloc]initWithEnabled:<#(RACSignal *)#> signalBlock:<#^RACSignal *(id input)signalBlock#>
+    
+    
+    _racCommand  = [[RACCommand alloc]initWithEnabled:self.isEmailSignal signalBlock:^RACSignal *(id input) {
+        
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+          //  [subscriber sendNext:@""];
+            [subscriber sendCompleted];
+            return [RACDisposable disposableWithBlock:^{
+                   NSLog(@"这里面可以写取消请求,完成信号后请求会取消");
+            }];
+        }];
+    }];
+  
+    _commandButton.rac_command = _racCommand;
+    
+//    [[_racCommand executionSignals] subscribeNext:^(RACSignal *x) {
+//       [x subscribeNext:^(NSString *x) {
+//          NSLog(@" subscribeNext  = %@",x);
+//       }];
+//    }];
+    [_racCommand execute:@"1"];
 }
 -(RACSignal *)isEmailSignal{
     
     
-   // @weakify(self);
+    
+    
+    @weakify(self);
     if (!_isEmailSignal) {
-        _isEmailSignal = _textField.rac_textSignal;
-//        [_isEmailSignal map:^id(NSString *value) {
-//        
-//        }];
+        RAC(self,emailString) =  self.textField.rac_textSignal;
+        _isEmailSignal = [RACObserve(self,emailString)  map:^id(id value) {
+            @strongify(self)
+            return @([self isValidateEmail:value]);
+        }];
+
+        
     }
     return _isEmailSignal;
+}
+
+- (BOOL)isValidateEmail:(NSString *)Email
+{
+    NSString *emailCheck = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",emailCheck];
+    BOOL isEmail = [emailTest evaluateWithObject:Email];
+    NSLog(@"isEmail = %@",isEmail?@"YES":@"NO");
+    return isEmail;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
