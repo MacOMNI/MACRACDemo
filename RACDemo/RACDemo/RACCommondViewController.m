@@ -82,13 +82,20 @@
     
     
     
-    @weakify(self);
+   
     if (!_isEmailSignal) {
-        RAC(self,emailString) =  self.textField.rac_textSignal;
-        _isEmailSignal = [RACObserve(self,emailString)  map:^id(id value) {
+     //   RAC(self,emailString) =  self.textField.rac_textSignal;
+        
+        @weakify(self);
+        _isEmailSignal = [self.textField.rac_textSignal map:^id(id value) {
             @strongify(self)
-            return @([self isValidateEmail:value]);
+             return @([self isValidateEmail:value]);
         }];
+        
+//        [RACObserve(self,emailString)  map:^id(id value) {
+//            @strongify(self)
+//            return @([self isValidateEmail:value]);
+//        }];
 
         
     }
