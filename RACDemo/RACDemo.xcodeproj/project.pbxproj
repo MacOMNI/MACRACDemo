@@ -10,7 +10,6 @@
 		41CE4A2D53B2D91F24200D95 /* libPods-RACDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFC0098C869A92D621EBBBE /* libPods-RACDemo.a */; };
 		5A400CB81E07D3F300465204 /* RACCommondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A400CB71E07D3F300465204 /* RACCommondViewController.m */; };
 		5A400CBB1E07D40D00465204 /* RACBindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A400CBA1E07D40D00465204 /* RACBindViewController.m */; };
-		5A400CBE1E07D41900465204 /* RACTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A400CBD1E07D41900465204 /* RACTestViewController.m */; };
 		5A400CC11E07D46C00465204 /* RACFliterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A400CC01E07D46C00465204 /* RACFliterViewController.m */; };
 		5A65EDE21E003433000C2ABC /* RACSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A65EDE11E003433000C2ABC /* RACSubjectViewController.m */; };
 		5AA480881DF82DED005A9C9D /* RACSignalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA480871DF82DED005A9C9D /* RACSignalViewController.m */; };
@@ -30,8 +29,6 @@
 		5A400CB71E07D3F300465204 /* RACCommondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACCommondViewController.m; sourceTree = "<group>"; };
 		5A400CB91E07D40D00465204 /* RACBindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACBindViewController.h; sourceTree = "<group>"; };
 		5A400CBA1E07D40D00465204 /* RACBindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACBindViewController.m; sourceTree = "<group>"; };
-		5A400CBC1E07D41900465204 /* RACTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACTestViewController.h; sourceTree = "<group>"; };
-		5A400CBD1E07D41900465204 /* RACTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACTestViewController.m; sourceTree = "<group>"; };
 		5A400CBF1E07D46C00465204 /* RACFliterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACFliterViewController.h; sourceTree = "<group>"; };
 		5A400CC01E07D46C00465204 /* RACFliterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACFliterViewController.m; sourceTree = "<group>"; };
 		5A65EDE01E003433000C2ABC /* RACSubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSubjectViewController.h; sourceTree = "<group>"; };
@@ -112,8 +109,6 @@
 				5A400CB71E07D3F300465204 /* RACCommondViewController.m */,
 				5A400CB91E07D40D00465204 /* RACBindViewController.h */,
 				5A400CBA1E07D40D00465204 /* RACBindViewController.m */,
-				5A400CBC1E07D41900465204 /* RACTestViewController.h */,
-				5A400CBD1E07D41900465204 /* RACTestViewController.m */,
 				5A400CBF1E07D46C00465204 /* RACFliterViewController.h */,
 				5A400CC01E07D46C00465204 /* RACFliterViewController.m */,
 			);
@@ -264,7 +259,6 @@
 				5AF0E05D1DF6D84500BA4AA4 /* AppDelegate.m in Sources */,
 				5AA480881DF82DED005A9C9D /* RACSignalViewController.m in Sources */,
 				5A400CBB1E07D40D00465204 /* RACBindViewController.m in Sources */,
-				5A400CBE1E07D41900465204 /* RACTestViewController.m in Sources */,
 				5AF0E05A1DF6D84500BA4AA4 /* main.m in Sources */,
 				5A65EDE21E003433000C2ABC /* RACSubjectViewController.m in Sources */,
 				5AF0E0661DF6D84500BA4AA4 /* RACDemo.xcdatamodeld in Sources */,

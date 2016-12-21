@@ -48,19 +48,16 @@
     // 五、监听当前命令是否正在执行executing
     
     // 六、使用场景,监听按钮点击，网络请求
-//    _textFieldSignal = [RACObserve(_textField,text)  map:^id(id value) {
-//        return @([self isValidateEmail:value]);
-//    }];
-    //本类内监听 textField 文本变化 映射
-    
+
+
 }
 -(void)initData{
     
-    
+    @weakify(self);
     _racCommand  = [[RACCommand alloc]initWithEnabled:self.isEmailSignal signalBlock:^RACSignal *(id input) {
-        
+        @strongify(self);
+        self.textView.text = self.textField.text;
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-          //  [subscriber sendNext:@""];
             [subscriber sendCompleted];
             return [RACDisposable disposableWithBlock:^{
                    NSLog(@"这里面可以写取消请求,完成信号后请求会取消");
@@ -69,35 +66,18 @@
     }];
   
     _commandButton.rac_command = _racCommand;
-    
-//    [[_racCommand executionSignals] subscribeNext:^(RACSignal *x) {
-//       [x subscribeNext:^(NSString *x) {
-//          NSLog(@" subscribeNext  = %@",x);
-//       }];
-//    }];
-    [_racCommand execute:@"1"];
+    //[_racCommand execute:@"1"];
 }
 -(RACSignal *)isEmailSignal{
     
-    
-    
-    
-   
     if (!_isEmailSignal) {
-     //   RAC(self,emailString) =  self.textField.rac_textSignal;
         
         @weakify(self);
         _isEmailSignal = [self.textField.rac_textSignal map:^id(id value) {
             @strongify(self)
              return @([self isValidateEmail:value]);
         }];
-        
-//        [RACObserve(self,emailString)  map:^id(id value) {
-//            @strongify(self)
-//            return @([self isValidateEmail:value]);
-//        }];
 
-        
     }
     return _isEmailSignal;
 }
