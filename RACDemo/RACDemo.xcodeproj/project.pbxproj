@@ -13,6 +13,10 @@
 		5A400CC11E07D46C00465204 /* RACFliterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A400CC01E07D46C00465204 /* RACFliterViewController.m */; };
 		5A65EDE21E003433000C2ABC /* RACSubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A65EDE11E003433000C2ABC /* RACSubjectViewController.m */; };
 		5AA480881DF82DED005A9C9D /* RACSignalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA480871DF82DED005A9C9D /* RACSignalViewController.m */; };
+		5AB3C27B1E52DDD0003EF56E /* MVVMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB3C2791E52DDD0003EF56E /* MVVMListViewController.m */; };
+		5AB3C27F1E52DDF0003EF56E /* RACListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB3C27E1E52DDF0003EF56E /* RACListModel.m */; };
+		5AB3C2821E52DE15003EF56E /* MVVMRACViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB3C2811E52DE15003EF56E /* MVVMRACViewModel.m */; };
+		5AB3C2851E52E5B5003EF56E /* RACListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB3C2841E52E5B5003EF56E /* RACListView.m */; };
 		5AF0E05A1DF6D84500BA4AA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0E0591DF6D84500BA4AA4 /* main.m */; };
 		5AF0E05D1DF6D84500BA4AA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0E05C1DF6D84500BA4AA4 /* AppDelegate.m */; };
 		5AF0E0601DF6D84500BA4AA4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF0E05F1DF6D84500BA4AA4 /* ViewController.m */; };
@@ -35,6 +39,14 @@
 		5A65EDE11E003433000C2ABC /* RACSubjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACSubjectViewController.m; sourceTree = "<group>"; };
 		5AA480861DF82DED005A9C9D /* RACSignalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACSignalViewController.h; sourceTree = "<group>"; };
 		5AA480871DF82DED005A9C9D /* RACSignalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACSignalViewController.m; sourceTree = "<group>"; };
+		5AB3C2781E52DDD0003EF56E /* MVVMListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMListViewController.h; sourceTree = "<group>"; };
+		5AB3C2791E52DDD0003EF56E /* MVVMListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMListViewController.m; sourceTree = "<group>"; };
+		5AB3C27D1E52DDF0003EF56E /* RACListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACListModel.h; sourceTree = "<group>"; };
+		5AB3C27E1E52DDF0003EF56E /* RACListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACListModel.m; sourceTree = "<group>"; };
+		5AB3C2801E52DE15003EF56E /* MVVMRACViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMRACViewModel.h; sourceTree = "<group>"; };
+		5AB3C2811E52DE15003EF56E /* MVVMRACViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMRACViewModel.m; sourceTree = "<group>"; };
+		5AB3C2831E52E5B5003EF56E /* RACListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACListView.h; sourceTree = "<group>"; };
+		5AB3C2841E52E5B5003EF56E /* RACListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACListView.m; sourceTree = "<group>"; };
 		5AF0E0551DF6D84500BA4AA4 /* RACDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RACDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF0E0591DF6D84500BA4AA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5AF0E05B1DF6D84500BA4AA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,6 +82,45 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5AB3C2741E52DD66003EF56E /* MVVM+RAC */ = {
+			isa = PBXGroup;
+			children = (
+				5AB3C2751E52DD73003EF56E /* Model */,
+				5AB3C2771E52DD8C003EF56E /* View */,
+				5AB3C2761E52DD81003EF56E /* ViewModel */,
+			);
+			name = "MVVM+RAC";
+			sourceTree = "<group>";
+		};
+		5AB3C2751E52DD73003EF56E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5AB3C27D1E52DDF0003EF56E /* RACListModel.h */,
+				5AB3C27E1E52DDF0003EF56E /* RACListModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5AB3C2761E52DD81003EF56E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5AB3C2801E52DE15003EF56E /* MVVMRACViewModel.h */,
+				5AB3C2811E52DE15003EF56E /* MVVMRACViewModel.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		5AB3C2771E52DD8C003EF56E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5AB3C2781E52DDD0003EF56E /* MVVMListViewController.h */,
+				5AB3C2791E52DDD0003EF56E /* MVVMListViewController.m */,
+				5AB3C2831E52E5B5003EF56E /* RACListView.h */,
+				5AB3C2841E52E5B5003EF56E /* RACListView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		5AF0E04C1DF6D84500BA4AA4 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +142,7 @@
 		5AF0E0571DF6D84500BA4AA4 /* RACDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5AB3C2741E52DD66003EF56E /* MVVM+RAC */,
 				5AF0E05B1DF6D84500BA4AA4 /* AppDelegate.h */,
 				5AF0E05C1DF6D84500BA4AA4 /* AppDelegate.m */,
 				5AF0E05E1DF6D84500BA4AA4 /* ViewController.h */,
@@ -255,7 +307,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AF0E0601DF6D84500BA4AA4 /* ViewController.m in Sources */,
+				5AB3C2821E52DE15003EF56E /* MVVMRACViewModel.m in Sources */,
 				5A400CB81E07D3F300465204 /* RACCommondViewController.m in Sources */,
+				5AB3C27B1E52DDD0003EF56E /* MVVMListViewController.m in Sources */,
+				5AB3C2851E52E5B5003EF56E /* RACListView.m in Sources */,
 				5AF0E05D1DF6D84500BA4AA4 /* AppDelegate.m in Sources */,
 				5AA480881DF82DED005A9C9D /* RACSignalViewController.m in Sources */,
 				5A400CBB1E07D40D00465204 /* RACBindViewController.m in Sources */,
@@ -263,6 +318,7 @@
 				5A65EDE21E003433000C2ABC /* RACSubjectViewController.m in Sources */,
 				5AF0E0661DF6D84500BA4AA4 /* RACDemo.xcdatamodeld in Sources */,
 				5A400CC11E07D46C00465204 /* RACFliterViewController.m in Sources */,
+				5AB3C27F1E52DDF0003EF56E /* RACListModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

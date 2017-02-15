@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "MVVMListViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,6 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    MVVMListViewController *listVC = [[MVVMListViewController alloc]init];
+    self.window.rootViewController = listVC;
+    [self.window makeKeyAndVisible];
     // Override point for customization after application launch.
     return YES;
 }
